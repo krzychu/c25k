@@ -2,6 +2,7 @@
 \usepackage[margin=15mm]{geometry}
 \usepackage{tikz}
 \usepackage{pifont}
+\usepackage{hyperref}
 
 % global parameters
 \pgfmathsetmacro{\cardwidth}{5}
@@ -30,12 +31,43 @@
       #3
       \end{tabular}
       \end{center}
+
     };
   \end{tikzpicture} 
 }
 
-\begin{document}
+\title{C25K card deck}
 
+\begin{document}
+\maketitle
+
+\section{What is it?}
+C25K (\url{http://www.coolrunning.com/engine/2/2\_3/181.shtml}) or
+Couch -- to -- 5K is a popular training program for people who want
+to start jogging. It aims to take you from absolute beginners level
+to 5 kilometer nonstop run in just nine weeks. This document contains
+deck of cards with workouts for every single day of training, so 
+you don't have to memorize the intervals. Time on cards is
+written in format \verb|mm:ss|.
+
+\textbf{IMPORTANT: I'm not an author of this program. You must read
+instruction from link above, and you train on your own responsibility}
+
+
+\section{Who is it for?}
+During interval training it's easy to lose track of what to do next 
+when not having any "cheatsheet" with workout plan. Of course there are
+plenty of C25K applications for smartphones, but if for some reason you
+don't want to take yours for jogging, this card deck is for you.
+
+I had one more reason for creating this document, because as board game
+enthusiast I wanted to learn how to create deck of cards using \LaTeX.  If
+someone finds it interesting to look how it was made, source code is available
+on GitHub: \url{https://github.com/krzychu/c25k}. If you find any errors,
+please report them there.
+
+
+\newpage
 
 %---------------------------------------------------------------------
 %                             WEEK 1
@@ -101,8 +133,73 @@
 
 
 %---------------------------------------------------------------------
-%                             WEEK 4
+%                             WEEK 5
 %---------------------------------------------------------------------
+
+\workoutcard{orange}{ WEEK 5 DAY 1 }{
+  WALK & 05:00 \\
+  RUN & 05:00 \\
+  WALK & 03:00 \\
+  RUN & 05:00 \\
+  WALK & 03:00 \\
+  RUN & 05:00 
+}
+\workoutcard{orange}{ WEEK 5 DAY 2 }{
+  WALK & 05:00 \\
+  RUN & 08:00 \\
+  WALK & 03:00 \\
+  RUN & 08:00 
+}
+\workoutcard{orange}{ WEEK 5 DAY 3 }{
+  WALK & 05:00 \\
+  RUN & 20:00 
+}
+%---------------------------------------------------------------------
+%                             WEEK 6
+%---------------------------------------------------------------------
+
+\workoutcard{red}{ WEEK 6 DAY 1 }{
+  WALK & 05:00 \\
+  RUN & 05:00 \\
+  WALK & 03:00 \\
+  RUN & 08:00 \\
+  WALK & 03:00 \\
+  RUN & 05:00 
+}
+\workoutcard{red}{ WEEK 6 DAY 2 }{
+  WALK & 05:00 \\
+  RUN & 10:00 \\
+  WALK & 03:00 \\
+  RUN & 10:00 
+}
+\workoutcard{red}{ WEEK 6 DAY 3 }{
+  WALK & 05:00 \\
+  RUN & 22:00 
+}
+
+
+%---------------------------------------------------------------------
+%                             WEEK 7
+%---------------------------------------------------------------------
+
+\newcommand{\boringWeek}[3]{
+\workoutcard{#2}{ WEEK #3 DAY 1 }{WALK & 05:00 \\ RUN & #1}
+\workoutcard{#2}{ WEEK #3 DAY 2 }{WALK & 05:00 \\ RUN & #1}
+\workoutcard{#2}{ WEEK #3 DAY 3 }{WALK & 05:00 \\ RUN & #1}
+}
+
+\boringWeek{25:00}{cyan}{7}
+
+%---------------------------------------------------------------------
+%                             WEEK 8
+%---------------------------------------------------------------------
+\boringWeek{28:00}{teal}{8}
+
+%---------------------------------------------------------------------
+%                             WEEK 9
+%---------------------------------------------------------------------
+\boringWeek{30:00}{magenta}{9}
+
 
 
 

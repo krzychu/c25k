@@ -5,4 +5,5 @@ clean:
 	rm -f *.log
 	rm -f *.pdf
 	rm -f *.aux
+	rm -f *.out
 	rm -f *.toc
