@@ -1,7 +1,4 @@
-#c25k - the card game
+#C25K card deck
 
+Card deck with workouts for every day of C25K program.
 
-
-### Who is this for?
-Anyone who tends to forgets details of training plan during workout, 
-and does not have a smartphone.
