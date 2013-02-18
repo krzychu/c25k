@@ -1,0 +1,111 @@
+\documentclass[parskip]{scrartcl}
+\usepackage[margin=15mm]{geometry}
+\usepackage{tikz}
+\usepackage{pifont}
+
+% global parameters
+\pgfmathsetmacro{\cardwidth}{5}
+\pgfmathsetmacro{\cardheight}{7}
+\pgfmathsetmacro{\stripwidth}{0.7}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\pgfmathsetmacro{\ruleheight}{0.3}
+
+\newcommand{\workoutcard}[3]{
+  \begin{tikzpicture}
+    % border
+    \draw[rounded corners=0.2cm] (0,0) rectangle (\cardwidth,\cardheight);
+   
+    % week and day strip
+    \fill[#1,rounded corners=0.1cm] (\strippadding,\strippadding) 
+      rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) 
+      node[rotate=90,above left,black,font=\LARGE] {#2};
+  
+    % workout
+    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right] 
+      at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) 
+    {
+      \begin{center}
+      \begin{tabular}{l|l}
+      #3
+      \end{tabular}
+      \end{center}
+    };
+  \end{tikzpicture} 
+}
+
+\begin{document}
+
+
+%---------------------------------------------------------------------
+%                             WEEK 1
+%---------------------------------------------------------------------
+
+\newcommand{\weekOneWorkout}{
+  WALK & 05:00 \\
+  \hline
+  \multicolumn{2}{c}{\small{repeat $\Downarrow$ for 20:00 } } \\
+  \hline
+  RUN & 00:60 \\
+  WALK & 00:90 
+}
+
+\workoutcard{lime}{ WEEK 1 DAY 1 }{\weekOneWorkout}
+\workoutcard{lime}{ WEEK 1 DAY 2 }{\weekOneWorkout}
+\workoutcard{lime}{ WEEK 1 DAY 3 }{\weekOneWorkout}
+
+%---------------------------------------------------------------------
+%                             WEEK 2
+%---------------------------------------------------------------------
+\workoutcard{olive}{ WEEK 2 DAY 1 }{\weekOneWorkout}
+\workoutcard{olive}{ WEEK 2 DAY 2 }{\weekOneWorkout}
+\workoutcard{olive}{ WEEK 2 DAY 3 }{\weekOneWorkout}
+
+%---------------------------------------------------------------------
+%                             WEEK 3
+%---------------------------------------------------------------------
+
+\newcommand{\weekThreeWorkout}{
+  WALK & 05:00 \\
+  \hline
+  \multicolumn{2}{c}{\small{repeat $\Downarrow \times 2$} } \\
+  \hline
+  RUN & 00:90 \\
+  WALK & 00:90 \\
+  RUN & 03:00 \\
+  WALK & 03:00
+}
+
+\workoutcard{brown}{ WEEK 3 DAY 1 }{\weekThreeWorkout}
+\workoutcard{brown}{ WEEK 3 DAY 2 }{\weekThreeWorkout}
+\workoutcard{brown}{ WEEK 3 DAY 3 }{\weekThreeWorkout}
+
+%---------------------------------------------------------------------
+%                             WEEK 4
+%---------------------------------------------------------------------
+
+\newcommand{\weekFourWorkout}{
+  WALK & 05:00 \\
+  RUN & 03:00 \\
+  WALK & 00:90 \\
+  RUN & 05:00 \\
+  WALK & 02:30 \\
+  RUN & 03:00 \\
+  WALK & 00:90 \\
+  RUN & 05:00 \\
+}
+
+\workoutcard{yellow}{ WEEK 4 DAY 1 }{\weekFourWorkout}
+\workoutcard{yellow}{ WEEK 4 DAY 2 }{\weekFourWorkout}
+\workoutcard{yellow}{ WEEK 4 DAY 3 }{\weekFourWorkout}
+
+
+%---------------------------------------------------------------------
+%                             WEEK 4
+%---------------------------------------------------------------------
+
+
+
+
+
+\end{document}
